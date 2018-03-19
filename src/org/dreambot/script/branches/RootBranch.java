@@ -7,14 +7,17 @@ import org.dreambot.script.leafs.DoBankLeaf;
 
 public class RootBranch extends NodeBranch {
 
+    private final Node bankLeaf = new DoBankLeaf();
+    private final Node bankBranch = new BankBranch();
+
     @Override
     public Node isTrue() {
-        return new DoBankLeaf();
+        return bankLeaf;
     }
 
     @Override
     public Node isFalse() {
-        return new BankBranch();
+        return bankBranch;
     }
 
     @Override

@@ -8,14 +8,17 @@ import org.dreambot.script.leafs.WalkToBankLeaf;
 
 public class TraversalBranch extends NodeBranch {
 
+    private final Node teleLeaf = new TeleportLeaf();
+    private final Node bankLeaf = new WalkToBankLeaf();
+
     @Override
     public Node isTrue() {
-        return new TeleportLeaf();
+        return teleLeaf;
     }
 
     @Override
     public Node isFalse() {
-        return new WalkToBankLeaf();
+        return bankLeaf;
     }
 
     @Override

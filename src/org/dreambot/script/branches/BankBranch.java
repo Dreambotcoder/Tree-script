@@ -9,14 +9,17 @@ import org.dreambot.script.leafs.WalkToBankLeaf;
 
 public class BankBranch extends NodeBranch {
 
+    private final Node bankLeaf = new OpenBankLeaf();
+    private final Node walkLeaf = new WalkToBankLeaf();
+
     @Override
     public Node isTrue() {
-        return new OpenBankLeaf();
+        return bankLeaf;
     }
 
     @Override
     public Node isFalse() {
-        return new WalkToBankLeaf();
+        return walkLeaf;
     }
 
     @Override
